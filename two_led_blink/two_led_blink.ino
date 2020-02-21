@@ -6,19 +6,25 @@
 */
 
 
-int ledOutPutPin = 8; // Declare pin to use for output.
+int firstLedOutPutPin = 7; // Declare pin to use for first LED output.
+int secondLedOutPutPin = 10; // Declare pin to use for second LED output.
 
 void setup() {
-  // put your setup code here, to run once:  
-  pinMode(ledOutPutPin, OUTPUT);
+ 
+  pinMode(firstLedOutPutPin, OUTPUT);
+  pinMode(secondLedOutPutPin, OUTPUT);
 
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
-
-  digitalWrite(ledOutPutPin, HIGH); // Turn the led on(HIGH is the voltage on)
+void blink(const int ledPinNumber) {
+  
+  digitalWrite(ledPinNumber, HIGH); // Turn the LED on.
   delay(1000); // Wait for 1Hz
-  digitalWrite(ledOutPutPin, LOW); // Turn the led off
+  digitalWrite(ledPinNumber, LOW); // Turn the LED off.
   delay(1000);
+ }
+
+void loop() {
+  blink(firstLedOutPutPin);
+  blink(secondLedOutPutPin);
 }
