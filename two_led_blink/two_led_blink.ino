@@ -16,15 +16,17 @@ void setup() {
 
 }
 
-void blink(const int ledPinNumber) {
-  
-  digitalWrite(ledPinNumber, HIGH); // Turn the LED on.
-  delay(1000); // Wait for 1Hz
-  digitalWrite(ledPinNumber, LOW); // Turn the LED off.
-  delay(1000);
- }
 
 void loop() {
-  blink(firstLedOutPutPin);
-  blink(secondLedOutPutPin);
+
+    digitalWrite(firstLedOutPutPin, HIGH); // Turn the first LED off.
+    delay(1000); // Wait for 1Hz
+    digitalWrite(firstLedOutPutPin, LOW); // Turn the first LED off.
+    delay(1000);
+    
+    digitalWrite(secondLedOutPutPin, HIGH); // Turn the second LED on.
+    delay(1000); // Wait for 1Hz
+    digitalWrite(secondLedOutPutPin, LOW); // Turn the second LED off.
+    delay(1000);
+
 }
