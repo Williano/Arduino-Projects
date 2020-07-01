@@ -11,7 +11,7 @@ unsigned long last_button_time = 0;
     
 void setup() {
   pinMode(ledPin, OUTPUT);
-  attachInterrupt(digitalPinToInterrupt(checkpoint), increment, RISING);
+  attachInterrupt(digitalPinToInterrupt(interruptPin), checkpoint, RISING);
   Serial.begin(9600);  //turn on serial communication
 }
     
@@ -20,7 +20,7 @@ void loop() {
   delay(3000); //pretend to be doing something useful
   Serial.println(x, DEC); //print x to serial monitor
   // call recovery function
-  Serial.println(recovery());
+  recovery();
 }
 
 // Interrupt service routine for interrupt 0
@@ -33,8 +33,17 @@ void checkpoint() {
     x++;
     digitalWrite(ledPin, HIGH);
     last_button_time = button_time;
+    saveValueToArray();
   }
 }
+
+void saveValueToArray(){
+  
+  for (byte i = 0; i < SIZE; i = i + 1) {
+    rollbackValues[i] = x;
+  }
+}
+
 
 int recovery() {
 
