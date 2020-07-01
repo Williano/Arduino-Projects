@@ -32,7 +32,6 @@ void loop()
    secondary13 =sqrt(secondary12/40); 
    secondary23 =sqrt(secondary22/40);
    dis = (125*(secondary13 - secondary23)); 
-   Serial.println(l);
    Serial.println(dis);
    
 ////  Serial.println(analogRead(A0));
