@@ -5,8 +5,8 @@ auto timer = timer_create_default(); // create a timer with default settings
 const int interruptPin = 2;
 
 //variables to keep track of the timing of recent interrupts
-int rollBackVariable;
-int saved;
+volatile int rollBackVariable;
+volatile int saved;
 
 void setup() {
   // put your setup code here, to run once:
