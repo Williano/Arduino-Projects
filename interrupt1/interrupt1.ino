@@ -20,7 +20,7 @@ void loop() {
   delay(3000); //pretend to be doing something useful
   Serial.println(x, DEC); //print x to serial monitor
   // call recovery function
-  recovery();
+//  recovery();
 }
 
 // Interrupt service routine for interrupt 0
@@ -33,7 +33,7 @@ void checkpoint() {
     x++;
     digitalWrite(ledPin, HIGH);
     last_button_time = button_time;
-    saveValueToArray();
+//    saveValueToArray();
   }
 }
 
