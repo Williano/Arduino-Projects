@@ -825,7 +825,7 @@ void recovery() {
   Serial.print("Recovery done at the time:");
   Serial.println(micros());
   sei();    
-  }    
+    
 }
 
 void checkpoint() {
